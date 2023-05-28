@@ -1,9 +1,11 @@
 import './App.css';
 import Header from './components/Header'
+import Formulario from './components/Formulario';
 function App() {
   return (
     <div className="App">
       <Header />
+      <Formulario/>
     </div>
   );
 }
