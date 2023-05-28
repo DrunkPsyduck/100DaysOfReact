@@ -20,7 +20,7 @@ function App() {
   //   localStorage.setItem('pilotos', JSON.stringify( pilotos ));
   // }, [pilotos])
 
-  const eliminarPilotos = id =>{
+  const eliminarPiloto = id =>{
     const pilotosActualizados = pilotos.filter(piloto => piloto.id !== id);
     setPilotos(pilotosActualizados)
 
@@ -31,7 +31,7 @@ function App() {
      
       <div className="mt-12 md:flex">
         <Formulario 
-          pacientes={pilotos}
+          pilotos={pilotos}
           setPilotos={setPilotos}
           piloto={piloto}
           setPiloto={setPiloto}
@@ -39,7 +39,7 @@ function App() {
         <ListadoPilotos 
           pilotos={pilotos}
           setPilotos={setPilotos}
-          eliminarPilotos={eliminarPilotos}
+          eliminarPiloto={eliminarPiloto}
           />
       </div>
     </div>

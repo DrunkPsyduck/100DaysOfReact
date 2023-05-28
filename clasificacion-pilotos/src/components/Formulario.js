@@ -38,15 +38,17 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             equipo,
             categoria
         }
+
+        console.log(piloto, objetoPiloto)
        
         if(piloto.id){
-            //editar registro
-            // objetoPiloto.id = piloto.id
-            // const pilotosActualizados = 
-            //     pilotos.map
-            //         ( pilotoState => pilotoState === piloto.id ? objetoPiloto : pilotoState )
-            // setPilotos(pilotosActualizados)
-            // setPiloto({})
+            // editar registro
+            objetoPiloto.id = piloto.id
+            const pilotosActualizados = 
+                pilotos.map
+                    ( pilotoState => pilotoState === piloto.id ? objetoPiloto : pilotoState )
+            setPilotos(pilotosActualizados)
+            setPiloto({})
 
         } else {
             // nuevo piloto
