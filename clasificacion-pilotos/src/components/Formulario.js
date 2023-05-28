@@ -1,12 +1,27 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
 
-const Formulario = () => {
+const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
     const [nombre, setNombre] = useState('')
     const [numero, setNumero] = useState('')
     const [equipo, setEquipo] = useState('')
     const [categoria, setCategoria] = useState('')
     const [error, setError] = useState(false)
+
+    useEffect(()=>{
+        if(Object.keys(piloto).length>0 ){
+            setNombre(piloto.nombre)
+            setNumero(piloto.numero)
+            setEquipo(piloto.equipo)
+            setCategoria(piloto.categoria)
+        }
+    }, [piloto])
+
+    function generarId(){
+        const random = Math.random.toString(36).substring(2)
+        const fecha = Date.now().toString(36)
+        return random+fecha            
+    }
 
     function handleSubmit(e){
         e.preventDefault()
@@ -23,6 +38,28 @@ const Formulario = () => {
             equipo,
             categoria
         }
+       
+        if(piloto.id){
+            //editar registro
+            // objetoPiloto.id = piloto.id
+            // const pilotosActualizados = 
+            //     pilotos.map
+            //         ( pilotoState => pilotoState === piloto.id ? objetoPiloto : pilotoState )
+            // setPilotos(pilotosActualizados)
+            // setPiloto({})
+
+        } else {
+            // nuevo piloto
+            objetoPiloto.id = generarId();
+            setPilotos([...pilotos, objetoPiloto])
+            console.log(pilotos)
+        }
+
+        //reiniciar form
+        setNombre('')
+        setNumero('')
+        setEquipo('')
+        setCategoria('')
     }
 
     return(
