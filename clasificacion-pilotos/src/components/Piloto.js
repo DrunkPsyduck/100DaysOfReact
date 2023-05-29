@@ -30,10 +30,10 @@ const Piloto = ({piloto, setPiloto, eliminarPiloto}) => {
             </p>
 
 
-            <div className="flex justify-between mt-8">
+            <div className="flex justify-between mt-10">
                 <button 
                     type="button"
-                    className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
+                    className="py-2 px-8 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-xl"
                     onClick={() => setPiloto(piloto)}
                 >
                     Editar
@@ -41,7 +41,7 @@ const Piloto = ({piloto, setPiloto, eliminarPiloto}) => {
 
                 <button 
                     type="button"
-                    className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg"
+                    className="py-2 px-8 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-xl"
                     onClick={handleEliminar}
                 >Eliminar</button>
             </div>

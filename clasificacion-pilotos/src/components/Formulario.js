@@ -86,7 +86,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                             Nombre del Piloto
                     </label>
                     <input id='nombre' type='text' placeholder='Nombre del piloto'
-                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800"
+                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
                             value={nombre}
                             onChange={(e)=> setNombre(e.target.value)}     
                     />
@@ -98,7 +98,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                             Equipo del Piloto
                     </label>
                     <input id='equipo' type='text' placeholder='Equipo del piloto'
-                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800"
+                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
                             value={equipo}
                             onChange={(e)=> setEquipo(e.target.value)}     
                     />
@@ -110,19 +110,19 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                             Numero
                     </label>
                     <input id='numero' type='number' min="0" max='100' setp='1' placeholder='Numero del piloto'
-                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800"
+                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
                             value={numero}
                             onChange={(e)=> setNumero(e.target.value)}     
                     />
                 </div>
 
-                <div className="mb-5">
+                <div className="mb-5 ">
                     <label htmlFor="categoria" 
                         className="block text-gray-700 uppercase text-bold" >
                             Categoria del Piloto
                     </label>
                     <input id='categoria' type='text' placeholder='Categoria del piloto'
-                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800"
+                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
                             value={categoria}
                             onChange={(e)=> setCategoria(e.target.value)}     
                     />
@@ -131,9 +131,9 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                 
                 <input 
                     type="submit"
-                    value={piloto.id ? 'EditarPiloto': 'Agregar Piloto'}
+                    value={piloto.id ? 'Editar Piloto': 'Agregar Piloto'}
                     className="bg-indigo-600 w-full mb-3 p-3 text-white uppercase font-bold hover:bg-indigo-700
-                       cursor-pointer transition-colors "/>
+                       cursor-pointer transition-colors rounded-xl"/>
             </form>
         
         </div>
