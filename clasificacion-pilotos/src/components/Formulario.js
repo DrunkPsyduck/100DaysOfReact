@@ -8,6 +8,9 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
     const [categoria, setCategoria] = useState('')
     const [error, setError] = useState(false)
 
+    // ! useEffect() funciona igual que componentDidMount() y componentDidUpdate()
+    // * revisar notas master para recordarlo
+    
     useEffect(()=>{
         if(Object.keys(piloto).length>0 ){
             setNombre(piloto.nombre)
@@ -15,7 +18,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             setEquipo(piloto.equipo)
             setCategoria(piloto.categoria)
         }
-    }, [piloto])
+        }, [piloto])
 
     function generarId(){
         const random = Math.random.toString(36).substring(2)
@@ -38,9 +41,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             equipo,
             categoria
         }
-
-        console.log(piloto, objetoPiloto)
-       
+      
         if(piloto.id){
             // editar registro
             objetoPiloto.id = piloto.id
@@ -54,7 +55,6 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             // nuevo piloto
             objetoPiloto.id = generarId();
             setPilotos([...pilotos, objetoPiloto])
-            console.log(pilotos)
         }
 
         //reiniciar form

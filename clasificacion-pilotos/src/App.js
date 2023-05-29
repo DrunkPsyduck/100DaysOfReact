@@ -8,6 +8,9 @@ function App() {
   const [pilotos, setPilotos] = useState([])
   const [piloto, setPiloto] = useState({})
 
+  // ! useEffect() funciona igual que componentDidMount() y componentDidUpdate()
+  // * revisar notas master para recordarlo
+
   // useEffect(()=>{
   //   const obtenerLP = () => {
   //     const pilotosLS = JSON.parse(localStorage.getItem('pilotos')) ?? [];
