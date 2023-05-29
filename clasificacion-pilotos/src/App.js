@@ -38,7 +38,7 @@ function App() {
         />
         <ListadoPilotos 
           pilotos={pilotos}
-          setPilotos={setPilotos}
+          setPiloto={setPiloto}
           eliminarPiloto={eliminarPiloto}
           />
       </div>

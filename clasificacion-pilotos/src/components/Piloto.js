@@ -30,12 +30,14 @@ const Piloto = ({piloto, setPiloto, eliminarPiloto}) => {
             </p>
 
 
-            <div className="flex justify-between mt-10">
+            <div className="flex justify-between mt-8">
                 <button 
                     type="button"
                     className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg"
                     onClick={() => setPiloto(piloto)}
-                >Editar</button>
+                >
+                    Editar
+                </button>
 
                 <button 
                     type="button"

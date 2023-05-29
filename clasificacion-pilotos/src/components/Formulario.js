@@ -129,7 +129,9 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                 </div>
 
                 
-                <input type="submit"
+                <input 
+                    type="submit"
+                    value={piloto.id ? 'EditarPiloto': 'Agregar Piloto'}
                     className="bg-indigo-600 w-full mb-3 p-3 text-white uppercase font-bold hover:bg-indigo-700
                        cursor-pointer transition-colors "/>
             </form>
