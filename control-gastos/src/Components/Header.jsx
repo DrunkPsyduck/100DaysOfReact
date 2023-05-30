@@ -1,11 +1,14 @@
 import NuevoPresupuesto from "./NuevoPresupuesto"
 
 
-function Header() {
+function Header({presupuesto, setPresupuesto}) {
   return (
     <header>
-    <h1 className="header"> Control de gastos </h1>
-    <NuevoPresupuesto />
+        <h1 className="header"> Control de gastos </h1>
+        <NuevoPresupuesto 
+            presupuesto={presupuesto}
+            setPresupuesto={setPresupuesto}
+        />
     </header>
   )
 }
