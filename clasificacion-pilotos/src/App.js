@@ -11,17 +11,17 @@ function App() {
   // ! useEffect() funciona igual que componentDidMount() y componentDidUpdate()
   // * revisar notas master para recordarlo
 
-  // useEffect(()=>{
-  //   const obtenerLP = () => {
-  //     const pilotosLS = JSON.parse(localStorage.getItem('pilotos')) ?? [];
-  //     setPilotos(pilotosLS)
-  //   }
-  //   obtenerLP();
-  // }, [])
+  useEffect(()=>{
+    const obtenerLP = () => {
+      const pilotosLS = JSON.parse(localStorage.getItem('pilotos')) ?? [];
+      setPilotos(pilotosLS)
+    }
+    obtenerLP();
+  }, [])
 
-  // useEffect(()=> {
-  //   localStorage.setItem('pilotos', JSON.stringify( pilotos ));
-  // }, [pilotos])
+  useEffect(()=> {
+    localStorage.setItem('pilotos', JSON.stringify( pilotos ));
+  }, [pilotos])
 
   const eliminarPiloto = id =>{
     const pilotosActualizados = pilotos.filter(piloto => piloto.id !== id);
