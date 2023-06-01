@@ -4,9 +4,11 @@ import Error from "./Error";
 const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
     const [nombre, setNombre] = useState('')
     const [numero, setNumero] = useState('')
+    const [tiempoVuelta, setTiempoVuelta] = useState('')
     const [equipo, setEquipo] = useState('')
     const [categoria, setCategoria] = useState('')
     const [error, setError] = useState(false)
+    const [repetido, setRepetido] = useState(false) 
 
     // ! useEffect() funciona igual que componentDidMount() y componentDidUpdate()
     // * revisar notas master para recordarlo
@@ -15,6 +17,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
         if(Object.keys(piloto).length>0 ){
             setNombre(piloto.nombre)
             setNumero(piloto.numero)
+            setTiempoVuelta(piloto.tiempoVuelta)
             setEquipo(piloto.equipo)
             setCategoria(piloto.categoria)
         }
@@ -34,11 +37,20 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             return;
         }
         setError(false)
+     
+      
+
+        if(pilotos.filter(y => y.nombre === nombre).length>0 && pilotos.filter(y => y.categoria === categoria).length>0 ){
+            setRepetido(true)
+            return;
+        }
+        setRepetido(false)
 
         const objetoPiloto = {
             nombre,
             numero, 
             equipo,
+            tiempoVuelta,
             categoria
         }
       
@@ -56,11 +68,11 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             objetoPiloto.id = generarId();
             setPilotos([...pilotos, objetoPiloto])
         }
-
-        //reiniciar form
+        // reiniciar form
         setNombre('')
         setNumero('')
         setEquipo('')
+        setTiempoVuelta('')
         setCategoria('')
     }
 
@@ -79,6 +91,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
             >
 
                 {error && <Error><p>Todos los campos son obligatorios</p></Error>}
+                {repetido && <Error><p>Ese numero ya esta elegido para esa categoria</p></Error>}
 
                 <div className="mb-5">
                     <label htmlFor="nombre" 
@@ -115,7 +128,17 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                             onChange={(e)=> setNumero(e.target.value)}     
                     />
                 </div>
-
+                <div className="mb-5">
+                    <label htmlFor="tiempoVuelta" 
+                        className="block text-gray-700 uppercase text-bold" >
+                            Tiempo de vuelta 
+                    </label>
+                    <input id='tiempoVuelta' type='text' placeholder='Tiempo de vuelta'
+                            className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
+                            value={tiempoVuelta}
+                            onChange={(e)=> setTiempoVuelta(e.target.value)}     
+                    />
+                </div>
                 <div className="mb-5 ">
                     <label htmlFor="categoria" 
                         className="block text-gray-700 uppercase text-bold" >
