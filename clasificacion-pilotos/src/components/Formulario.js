@@ -133,7 +133,7 @@ const Formulario = ({pilotos, setPilotos, piloto, setPiloto}) => {
                         className="block text-gray-700 uppercase text-bold" >
                             Tiempo de vuelta 
                     </label>
-                    <input id='tiempoVuelta' type='text' placeholder='Tiempo de vuelta'
+                    <input id='tiempoVuelta' type='text' placeholder='Tiempo de vuelta formato mm:ss:ms'
                             className="border-2 w-full p-2 mt-2 placeholder-emerald-800 rounded-xl"
                             value={tiempoVuelta}
                             onChange={(e)=> setTiempoVuelta(e.target.value)}     
