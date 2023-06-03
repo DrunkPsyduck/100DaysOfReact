@@ -19,3 +19,4 @@ Lista de Proyectos
 6. Se  comienza un nuevo proyectos para añadir pilotos y repasar los conocimientos anteriores. Se sigue utilizando TailwindCSS pero no se usa Vite ni ficheros .jsx
 7. Se repasa el uso de useEffect() puesto que antes trabaje con 'componentDidMount()' y 'CompunenDidUpdate()'. Falta por a;adir el uso de LocalStorage para guardar datos
 8. Un día sin mucho movimiento de código pero aprendiendo y repasando a nivel teórico fundamentos internos de React
+9. Se crea un nuevo proyecto de Repaso y uso de APIs. Esta en un repositorio aparte para poder ser desplegada en cuantpo se termine. esta App se ira haciendo en días alternos respecto al curso 
