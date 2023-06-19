@@ -20,3 +20,4 @@ Lista de Proyectos
 7. Se repasa el uso de useEffect() puesto que antes trabaje con 'componentDidMount()' y 'CompunenDidUpdate()'. Falta por a;adir el uso de LocalStorage para guardar datos
 8. Un día sin mucho movimiento de código pero aprendiendo y repasando a nivel teórico fundamentos internos de React
 9. Se crea un nuevo proyecto de Repaso y uso de APIs. Esta en un repositorio aparte para poder ser desplegada en cuantpo se termine. esta App se ira haciendo en días alternos respecto al curso 
+10. Se retoma el reto después de dos semanas sin realizar cambios debido a falta de tiempo. Se realiza llamada a la API, se estraen los datos y se guardan para poder mostrarlos más adelante
