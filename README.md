@@ -21,3 +21,5 @@ Lista de Proyectos
 8. Un día sin mucho movimiento de código pero aprendiendo y repasando a nivel teórico fundamentos internos de React
 9. Se crea un nuevo proyecto de Repaso y uso de APIs. Esta en un repositorio aparte para poder ser desplegada en cuantpo se termine. esta App se ira haciendo en días alternos respecto al curso 
 10. Se retoma el reto después de dos semanas sin realizar cambios debido a falta de tiempo. Se realiza llamada a la API, se estraen los datos y se guardan para poder mostrarlos más adelante
+11. Se realizan las llamadas a la API para mostrar los datos del día actual y los 3 siguientes días, se instala TailwindCSS y se empiezan a aplicar estilos.
+12. Se continua aplicacion estilos y la posición de los elementos 
