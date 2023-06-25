@@ -24,5 +24,5 @@ Lista de Proyectos
 11. Se realizan las llamadas a la API para mostrar los datos del día actual y los 3 siguientes días, se instala TailwindCSS y se empiezan a aplicar estilos.
 12. Se continua aplicacion estilos y la posición de los elementos 
 13. (22/06/23) se soluciona el problema de la llamada a la API que daba error en netlify por un error tipografico en la llamada. Se arregla además eñ bucle infinito en useEffect() en el primer renderizado del componente
-14. (23/06/23) Se modificanc estilos y se consigue actualizar el color de fondo dependeindo de la hora local
-15. 
+14. (24/06/23) Se modificanc estilos y se consigue actualizar el color de fondo dependeindo de la hora local
+15. (25/06/23) Se termina con los estilos en el muestreo de datos. Faltan por mostrar los datos de los porximos dias y las horas paraterminar
