@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Mensaje from './Mensaje'
 import Cerrar from './../img/cerrar.svg'
 
-const Modal = ({setModal, animarModal, setAnimarModal}) => {
+const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
     const [nombre, setNombre] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [categoria, setCategoria] = useState('')
@@ -20,8 +20,13 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
         e.preventDefault()
         if ([nombre, cantidad, categoria].includes("")) {
           SetMensaje('Todos los campos son obligatorios');
+          setTimeout(()=>{
+            SetMensaje('')
+          }, 3000)
           return;
         }
+
+        guardarGasto({nombre, cantidad, categoria})
     }
   return (
     <div className="modal">
