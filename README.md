@@ -26,3 +26,5 @@ Lista de Proyectos
 13. (22/06/23) se soluciona el problema de la llamada a la API que daba error en netlify por un error tipografico en la llamada. Se arregla además eñ bucle infinito en useEffect() en el primer renderizado del componente
 14. (24/06/23) Se modificanc estilos y se consigue actualizar el color de fondo dependeindo de la hora local
 15. (25/06/23) Se termina con los estilos en el muestreo de datos. Faltan por mostrar los datos de los porximos dias y las horas paraterminar
+16. (26/06/23) Se continua con el curso de Udemy. Se añade lógica al control de presupuestos
+17. 
