@@ -45,9 +45,9 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
           <input
             id="nombre"
             type="text"
-            placeholder="Añade el nombre del gasto"
+            placeholder="Añade el Nombre del Gasto"
             value={nombre}
-            onChange={(e) => setNombre(e.target.Value)}
+            onChange={(e) => setNombre(e.target.value)}
           />
         </div>
         <div className="campo">
@@ -66,12 +66,13 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
           <select
             id="categoria"
             value={categoria}
-            onChange={(e) => setCategoria(e.target.Value)}
+            onChange={(e) => setCategoria(e.target.value)}
           >
-            <option value="">-- Seleccione</option>
-            <option value="chorro">Ahorro</option>
+            <option value="">-- Seleccione --</option>
+            <option value="ahorro">Ahorro</option>
             <option value="comida">Comida</option>
-            <option value="gastos">Gastos varios</option>
+            <option value="casa">Casa</option>
+            <option value="gastos">Gastos Varios</option>
             <option value="ocio">Ocio</option>
             <option value="salud">Salud</option>
             <option value="suscripciones">Suscripciones</option>

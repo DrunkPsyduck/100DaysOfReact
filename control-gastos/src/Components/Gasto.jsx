@@ -2,6 +2,7 @@
 
 const Gasto =({key, gasto})=> {
     const {categoria, nombre, cantidad, id} = gasto
+    console.log(gasto)
   return (
     <div className="gasto sombra">
         <div className="contenido-gasto">
@@ -10,7 +11,7 @@ const Gasto =({key, gasto})=> {
                     {categoria}
                 </a>
                 <a className="categoria">
-                    {nombre}
+                    {nombre}{gasto.nombre}
                 </a>
             </div>
         </div>

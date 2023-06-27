@@ -1,6 +1,7 @@
 import Gasto from "./Gasto"
 
 const ListadoGastos = ({gastos})=> {
+  
   return (
     <div>
       <div className="listado-gastos contenedor">
