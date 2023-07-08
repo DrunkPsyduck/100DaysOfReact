@@ -21,21 +21,22 @@ const diccionarioIconos = {
   };
 
 
-const Gasto =({key, gasto})=> {
+const Gasto =({key, gasto, setGastoEditar})=> {
   const { categoria, nombre, cantidad, id, fecha } = gasto;
 
  
   const leadingActions = () => (
     <LeadingActions>
-      <SwipeAction onClick={() => console.log("HH")}>Editar</SwipeAction>
+      <SwipeAction onClick={() => setGastoEditar(gasto)}>Editar</SwipeAction>
     </LeadingActions>
   )
 
-  const trailingActions = () => (
+  const trailingActions = () => {
+    return(
     <TrailingActions>
       <SwipeAction onClick={() => console.log("HH")}>Borrar</SwipeAction>
     </TrailingActions>
-  )
+  )}
 
   return (
     <SwipeableList>

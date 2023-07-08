@@ -1,33 +1,45 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Mensaje from './Mensaje'
 import Cerrar from './../img/cerrar.svg'
 
-const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
-    const [nombre, setNombre] = useState('')
-    const [cantidad, setCantidad] = useState('')
-    const [categoria, setCategoria] = useState('')
-    const [mensaje, SetMensaje] = useState('')
+const Modal = ({
+  setModal,
+  animarModal,
+  setAnimarModal,
+  guardarGasto,
+  gastoEditar
+}) => {
+  const [nombre, setNombre] = useState("");
+  const [cantidad, setCantidad] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [mensaje, SetMensaje] = useState("");
 
-    const ocultarModal = () => {
-      
-        setAnimarModal(false)
-        setTimeout(()=>{
-            setModal(false)
-        }, 500)
+  useEffect(()=>{
+    if(Object.keys(gastoEditar).length>0){
+      setNombre(gastoEditar.nombre)
+      setCantidad(gastoEditar.cantidad)
+      setCategoria(gastoEditar.categoria)
+    }
+  },[])
+  const ocultarModal = () => {
+    setAnimarModal(false);
+    setTimeout(() => {
+      setModal(false);
+    }, 500);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if ([nombre, cantidad, categoria].includes("")) {
+      SetMensaje("Todos los campos son obligatorios");
+      setTimeout(() => {
+        SetMensaje("");
+      }, 3000);
+      return;
     }
 
-    const handleSubmit = e =>{
-        e.preventDefault()
-        if ([nombre, cantidad, categoria].includes("")) {
-          SetMensaje('Todos los campos son obligatorios');
-          setTimeout(()=>{
-            SetMensaje('')
-          }, 3000)
-          return;
-        }
-
-        guardarGasto({nombre, cantidad, categoria})
-    }
+    guardarGasto({ nombre, cantidad, categoria });
+  };
   return (
     <div className="modal">
       <div className="cerrar-modal">
@@ -82,6 +94,6 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
       </form>
     </div>
   );
-}
+};
 
 export default Modal
