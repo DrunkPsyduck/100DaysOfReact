@@ -27,4 +27,5 @@ Lista de Proyectos
 14. (24/06/23) Se modificanc estilos y se consigue actualizar el color de fondo dependeindo de la hora local
 15. (25/06/23) Se termina con los estilos en el muestreo de datos. Faltan por mostrar los datos de los porximos dias y las horas paraterminar
 16. (26/06/23) Se continua con el curso de Udemy. Se añade lógica al control de presupuestos. Cambios en tipografía en app Tiempo
-17. 
+17. (07/07/23) Se modifica el portfolio para dejarlo como estaba al principio, modificación de datos y muestreo de información
+18. (08/08/23) Se continua el desarrollo de control de gastos, se implementa la edicion, muestreo, funcionalidad y diccionarios de categorias 
