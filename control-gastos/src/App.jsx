@@ -13,31 +13,72 @@ function App() {
   const [gastos, setGastos] = useState([])
   const [gastoEditar, setGastoEditar] = useState({})
 
-  useEffect(()=>{
-    if(Object.keys(gastoEditar).length>0){
-      handleNuevoGasto()
+  useEffect(() => {
+    if( Object.keys(gastoEditar).length > 0 ) {
+        setModal(true)
+
+        setTimeout(() => {
+            setAnimarModal(true)
+        }, 500);
     }
-  }, [gastoEditar])
+  }, [ gastoEditar ])
 
-  const handleNuevoGasto = () =>{
+  useEffect(() => {
+    localStorage.setItem('presupuesto', presupuesto ?? 0)
+  }, [presupuesto])
+
+  useEffect(() => {
+    localStorage.setItem('gastos', JSON.stringify(gastos) ?? [])
+  }, [gastos])
+
+  // useEffect(() => {
+  //   if(filtro) {
+  //       const gastosFiltrados = gastos.filter( gasto => gasto.categoria === filtro)
+  //       setGastosFiltrados(gastosFiltrados)
+  //   }
+  // }, [filtro]);
+
+  useEffect(() => {
+    const presupuestoLS = Number(localStorage.getItem('presupuesto')) ?? 0;
+
+    if(presupuestoLS > 0 ) {
+      setIsValidPresupuesto(true)
+    }
+  }, []);
+  
+
+
+  const handleNuevoGasto = () => {
     setModal(true)
+    setGastoEditar({})
 
     setTimeout(() => {
-      setAnimarModal(true)
+        setAnimarModal(true)
     }, 500);
   }
 
-  const guardarGasto = (gasto) =>{
-    gasto.id = generarID();
-    gasto.fecha = Date.now();
-    setGastos([...gastos, gasto]);
-
-    setAnimarModal(false);
+  const guardarGasto = gasto => {
+    if(gasto.id) {
+      // Actualizar
+      const gastosActualizados = gastos.map( gastoState => gastoState.id === gasto.id ? gasto : gastoState)
+      setGastos(gastosActualizados);
+      setGastoEditar({})
+    } else {
+      // Nuevo Gasto
+      gasto.id = generarID();
+      gasto.fecha = Date.now();
+      setGastos([...gastos, gasto ])
+    }
+    setAnimarModal(false)
     setTimeout(() => {
-      setModal(false);
+        setModal(false)
     }, 500);
   }
 
+  const eliminarGasto = id => {
+    const gastosActualizados = gastos.filter((gasto) => gasto.id !== id);
+    setGastos(gastosActualizados);
+  }
   return (
     <div className={modal ? 'fijar': ''}>
       <Header
