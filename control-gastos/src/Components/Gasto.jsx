@@ -26,7 +26,7 @@ const Gasto =({key, gasto})=> {
       <div className="contenido-gasto">
         <img src={diccionarioIconos[categoria]} alt="Icono" />
         <div className="descripcion-gasto">
-          <a className="categoria">{categoria}</a>{""}
+          <a className="categoria">{categoria}</a>
           <a className="nombre-gasto">{nombre}</a>
           <p className="fecha-gasto">
             {" "}
